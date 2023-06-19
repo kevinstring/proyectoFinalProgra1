@@ -11,6 +11,8 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import javax.swing.BorderFactory;
+import javax.swing.border.Border;
 
 
 /**
@@ -37,7 +39,7 @@ public Usuario user = new Usuario();
             
             
             
-        }catch(IOException e){
+        }catch(IOException e){  
             System.out.println("Error al leer archivo");
         }catch(Exception e){
             System.out.println("Error al leer objeto del archivo");
@@ -49,9 +51,10 @@ public Usuario user = new Usuario();
     public pantallaPrincipal() {
      
         initComponents();
+int radio = 10; // Define el radio del borde
 
                 this.getContentPane().setBackground(Color.white);
-                        infoAdmin.setText("Bienvenido KEVIN GABRIEL MEDINA 3190-4946 SECCION B");
+                        infoAdmin.setText("KEVIN GABRIEL MEDINA 3190-4946 SECCION B");
 
                                 setLocationRelativeTo(null);
 
@@ -69,11 +72,15 @@ public Usuario user = new Usuario();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
+        jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        label1 = new java.awt.Label();
+        jPanel2 = new javax.swing.JPanel();
         infoAdmin = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -98,33 +105,39 @@ public Usuario user = new Usuario();
         jMenuBar2.add(jMenu5);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel3.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("LogOut");
+        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 80, -1));
 
-        label1.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        label1.setForeground(new java.awt.Color(0, 0, 204));
-        label1.setText("PANEL DE ADMINISTRADOR");
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel2.setFont(new java.awt.Font("Liberation Mono", 0, 14)); // NOI18N
 
+        infoAdmin.setBackground(new java.awt.Color(255, 255, 255));
         infoAdmin.setText("jLabel1");
+        infoAdmin.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        jPanel2.add(infoAdmin);
 
-        jButton4.setText("Cargar XML");
-        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton4MouseClicked(evt);
-            }
-        });
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 420, 30));
 
-        jButton3.setText("Cargar CSV");
+        jPanel1.setBackground(new java.awt.Color(0, 51, 51));
+
+        jButton3.setBackground(new java.awt.Color(153, 255, 153));
+        jButton3.setForeground(new java.awt.Color(0, 0, 0));
+        jButton3.setText("Cargar Usuarios");
+        jButton3.setBorder(null);
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton3MouseClicked(evt);
@@ -135,6 +148,34 @@ public Usuario user = new Usuario();
                 jButton3ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton3);
+
+        jButton4.setBackground(new java.awt.Color(153, 255, 153));
+        jButton4.setForeground(new java.awt.Color(0, 0, 0));
+        jButton4.setText("Cargar Equipos");
+        jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4);
+
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 130, 70));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("/home/kevin/Escritorio/Proyecto/src/main/java/imagenes/panel.png")); // NOI18N
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 290, 200));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/kevin/Escritorio/Proyecto/src/main/java/imagenes/plain-smooth-green-wall-texture.jpg")); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 590, 280));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 270));
 
         jMenu1.setText("Usuarios");
 
@@ -260,48 +301,6 @@ public Usuario user = new Usuario();
 
         setJMenuBar(jMenuBar1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(135, 135, 135)
-                .addComponent(jButton4)
-                .addGap(215, 215, 215)
-                .addComponent(jButton1))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(infoAdmin))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(16, 16, 16)
-                    .addComponent(jButton3)
-                    .addContainerGap(430, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jButton4)))
-                .addGap(21, 21, 21)
-                .addComponent(infoAdmin)
-                .addGap(7, 7, 7)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(20, 20, 20)
-                    .addComponent(jButton3)
-                    .addContainerGap(162, Short.MAX_VALUE)))
-        );
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -331,13 +330,6 @@ this.dispose();// TODO add your handling code here:
                 ModificarUsuario modificar = new ModificarUsuario();
                 modificar.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem5ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-                Log log= new Log();
-                log.setVisible(true);
-                this.dispose();
-// TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
                 CrearEquipo equipo = new CrearEquipo();
@@ -386,27 +378,34 @@ this.dispose();// TODO add your handling code here:
                 modificar.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+
+        SubirXml xml = new SubirXml();
+        xml.setVisible(true);
+
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4MouseClicked
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        LeerArchiv leerAr = new LeerArchiv();
+        leerAr.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3MouseClicked
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-             
-        SubirXml xml = new SubirXml();
-                xml.setVisible(true);
-                
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here: 
-        LeerArchiv leerAr = new LeerArchiv();
-        leerAr.setVisible(true);      
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Log log= new Log();
+        log.setVisible(true);
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -418,6 +417,8 @@ this.dispose();// TODO add your handling code here:
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -437,7 +438,9 @@ this.dispose();// TODO add your handling code here:
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
-    private java.awt.Label label1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 
 

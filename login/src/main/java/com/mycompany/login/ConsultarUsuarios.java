@@ -20,7 +20,7 @@ public class ConsultarUsuarios extends javax.swing.JFrame {
     public ConsultarUsuarios() {
         initComponents();
                 llenarJTable();
-                                        setLocation(100,100);
+                                       setLocationRelativeTo(null);
 
 
     }

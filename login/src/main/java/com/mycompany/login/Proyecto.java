@@ -4,6 +4,7 @@
  */
 package com.mycompany.login;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -17,7 +18,12 @@ public class Proyecto {
     private String fechaFin;
     private String departamento;
     private Equipo equipoAsignado;
-   
+    private ArrayList<Tareas> tarea = new ArrayList<>();
+
+ public void asignarTarea(Tareas t) {
+        t.setProyectoAsignado(this);
+        tarea.add(t);
+    }
 
     /**
      * @return the id
@@ -101,6 +107,20 @@ public class Proyecto {
      */
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
+    }
+
+    /**
+     * @return the tarea
+     */
+    public ArrayList<Tareas> getTarea() {
+        return tarea;
+    }
+
+    /**
+     * @param tarea the tarea to set
+     */
+    public void setTarea(ArrayList<Tareas> tarea) {
+        this.tarea = tarea;
     }
     
     

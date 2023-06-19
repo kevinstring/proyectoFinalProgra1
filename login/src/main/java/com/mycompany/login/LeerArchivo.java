@@ -21,7 +21,9 @@ public class LeerArchivo extends javax.swing.JPanel {
      * Creates new form LeerArchivo
      */
     public LeerArchivo() {
+        
         initComponents();
+        
     }
 
     /**

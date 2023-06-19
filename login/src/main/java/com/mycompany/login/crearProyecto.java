@@ -22,6 +22,7 @@ public class crearProyecto extends javax.swing.JFrame {
      */
     public crearProyecto() {
         initComponents();
+         setLocationRelativeTo(null);
     }
 
     /**
@@ -162,7 +163,9 @@ public class crearProyecto extends javax.swing.JFrame {
                         // TODO add your handling code here:
                         
 SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+
                       Proyecto proyecto = new Proyecto();
+                      
                         String nombre =nombreProyecto.getText();
                         String departamento= nombreDepartamento.getText();
                         Date fechaIni= fechaInicio.getDate();

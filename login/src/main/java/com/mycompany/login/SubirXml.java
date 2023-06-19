@@ -31,6 +31,7 @@ public class SubirXml extends javax.swing.JFrame {
      */
     public SubirXml() {
         initComponents();
+         setLocationRelativeTo(null);
     }
 
     /**
@@ -42,56 +43,26 @@ public class SubirXml extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        nombreField = new javax.swing.JTextField();
-        correoField = new javax.swing.JTextField();
-        apellidoField = new javax.swing.JTextField();
-        rolField = new javax.swing.JTextField();
-        passwordField = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Nombre");
-
-        jLabel2.setText("Apellido");
-
-        jLabel3.setText("Correo");
-
-        jLabel4.setText("Password");
-
-        jLabel5.setText("Rol");
-
-        jButton1.setText("Crear");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("Subir");
+        jButton2.setText("Cargar Generado");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 112, -1, -1));
 
-        jButton3.setText("Cargar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
+        jTable1.setBackground(new java.awt.Color(153, 255, 255));
+        jTable1.setForeground(new java.awt.Color(0, 0, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -105,109 +76,33 @@ public class SubirXml extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(408, 6, -1, 275));
+
         jButton4.setText("Regresar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 270, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2))
-                                .addGap(49, 49, 49)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(nombreField, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
-                                    .addComponent(apellidoField)
-                                    .addComponent(correoField)
-                                    .addComponent(rolField)
-                                    .addComponent(passwordField)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton4)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(nombreField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(apellidoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(correoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rolField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 13, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/kevin/Escritorio/Proyecto/src/main/java/imagenes/plain-smooth-green-wall-texture.jpg")); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    Usuario user = new Usuario();
-    user.setId(21);
-    user.setUsuario(nombreField.getText());
-user.setApellido(apellidoField.getText());
-user.setCorreo(correoField.getText());
-user.setPassword(passwordField.getText());
-user.setRol(rolField.getText());// TODO add your handling code here:
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+      this.dispose();
+        pantallaPrincipal prin = new pantallaPrincipal();
+prin.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
-Login.usuarios.add(user);
-        llenarTabla();
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    
         usuarios = new LinkedList<>();
         
-             
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivos XML", "xml");
         
@@ -218,18 +113,7 @@ Login.usuarios.add(user);
         if(seleccion == JFileChooser.APPROVE_OPTION){
             File archivo = fileChooser.getSelectedFile();
             leerXml(archivo);
-        }
-                // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-      this.dispose();
-        pantallaPrincipal prin = new pantallaPrincipal();
-prin.setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        }        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -245,25 +129,19 @@ prin.setVisible(true);        // TODO add your handling code here:
               fichero = new FileWriter(archivo);
               pw = new PrintWriter(fichero);
               
-              pw.println("<usuarios>");
+              pw.println("<equipos>");
+              int cont = 0;
+              for(Equipo p : Login.equipos){
               
-              for(Usuario p : usuarios){
-              
-                  pw.println("<usuario id=\""+p.getId()+"\">");
+                  pw.println("<equipo id=\""+p.getId()+"\"  nombre=\""+p.getNombre()+"\" lider=\""+p.getLider().getCorreo()+"\">");
                   
-                  pw.println("<nombre>"+p.getUsuario()+"</nombre>");
-                  
-                  pw.println("<apellido>"+p.getApellido()+"</apellido>");
-                  
-                  pw.println("<correo>"+p.getCorreo()+"</correo>");
-                  pw.println("<rol>"+p.getRol()+"</rol>");
-                  pw.println("<password>"+p.getPassword()+"</password>");
-                  
-                  pw.println("</usuario>");
-                  
+                  pw.println("<miembro>"+p.getMiembro().get(cont).getCorreo()+"</miembro>");
+               
+                  pw.println("</equipo>");
+                  cont++;
               }
               
-              pw.println("</usuarios>");
+              pw.println("</equipos>");
             
         } catch (Exception e) {
             e.printStackTrace();
@@ -279,84 +157,92 @@ prin.setVisible(true);        // TODO add your handling code here:
         }
         
     }
-      private void leerXml(File archivo){
-        try{
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dbBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dbBuilder.parse(archivo);
-            
-            doc.getDocumentElement().normalize();
-            
-            NodeList nList = doc.getElementsByTagName("usuario");
-            
-            for(int i=0; i<nList.getLength();i++){
-                
-                Node nNode = nList.item(i);
-                
-                if(nNode.getNodeType() == Node.ELEMENT_NODE){
-                    
-                      Element e = (Element) nNode;
-                      Usuario p = new Usuario();
-                      p.setId(Integer.parseInt(e.getAttributeNode("id").getTextContent()));
-                      p.setUsuario(e.getElementsByTagName("nombre").item(0).getTextContent());
-                      p.setApellido(e.getElementsByTagName("apellido").item(0).getTextContent());
-                      p.setCorreo(e.getElementsByTagName("correo").item(0).getTextContent());
-                      p.setRol(e.getElementsByTagName("rol").item(0).getTextContent());
-                      p.setPassword(e.getElementsByTagName("password").item(0).getTextContent());
-                      
-                      Login.usuarios.add(p);
-                      
+    private void leerXml(File archivo) {
+    try {
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder dbBuilder = dbFactory.newDocumentBuilder();
+        Document doc = dbBuilder.parse(archivo);
+
+        doc.getDocumentElement().normalize();
+
+        NodeList equipoList = doc.getElementsByTagName("equipo");
+
+        for (int i = 0; i < equipoList.getLength(); i++) {
+            Node nNode = equipoList.item(i);
+
+            if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+                Element equipoElement = (Element) nNode;
+                System.out.println(equipoElement.getAttribute("lider"));
+
+                Equipo p = new Equipo();
+                p.setId(Integer.parseInt(equipoElement.getAttribute("id")));
+                p.setNombre(equipoElement.getAttribute("nombre"));
+                p.setEstado(equipoElement.getAttribute("estado"));
+                String liderCorreo = equipoElement.getAttribute("lider");
+
+                for (Usuario user : Login.usuarios) {
+                    System.out.println(user.getCorreo());
+
+                    if (user.getCorreo().equals(liderCorreo)) {
+                        p.setLider(user);
+                        System.out.println(equipoElement.getElementsByTagName("correo").item(i).getTextContent());
+                    } else {
+                        System.out.println("EEFEE");
+                    }
+
+                    NodeList correoList = equipoElement.getElementsByTagName("correo");
+                    for (int j = 0; j < correoList.getLength(); j++) {
+                        Element correoElement = (Element) correoList.item(j);
+                        String correo = correoElement.getTextContent();
+
+                        if (user.getCorreo().equals(correo)) {
+                            p.agregarMiembro(user);
+                            System.out.println(user.getCorreo() + "AA");
+                        }
+                    }
                 }
-                
+
+                Login.equipos.add(p);
             }
-            
-            llenarTabla();
-            
-            
-        
-        }catch(Exception ex){
-            ex.printStackTrace();
         }
+
+        llenarTabla();
+    } catch (Exception ex) {
+        ex.printStackTrace();
     }
+}
+
+      
    
      private void llenarTabla() {
-        DefaultTableModel dt = new DefaultTableModel(new String []{"Id","Nombre","Apellido","Correo","Rol","Password"}, usuarios.size());
-        
-        jTable1.setModel(dt);
-        
-        TableModel tm = jTable1.getModel();
-        
-        for(int i = 0; i<Login.usuarios.size();i++){
-            Usuario p = usuarios.get(i);
-            tm.setValueAt(p.getId(), i, 0);
-            tm.setValueAt(p.getUsuario(), i, 1);
-            tm.setValueAt(p.getApellido(), i, 2);
-            tm.setValueAt(p.getCorreo(), i, 3);
-                        tm.setValueAt(p.getRol(), i, 4);
-            tm.setValueAt(p.getPassword(), i, 5);
+DefaultTableModel table = new DefaultTableModel(new String[]{"Nombre", "Lider", "Miembro", "Id","estado"}, Login.equipos.size());
+jTable1.setModel(table);
 
+TableModel modelo = jTable1.getModel();
 
+for (int i = 0; i < Login.equipos.size(); i++) {
+    Equipo u = Login.equipos.get(i);
 
-        }
-        
+    modelo.setValueAt(u.getNombre(), i, 0);
+    modelo.setValueAt(u.getLider().getCorreo(), i, 1);
+    StringBuilder miembros = new StringBuilder();
+    for (Usuario miembro : u.getMiembro()) {
+        miembros.append(miembro.getCorreo()).append(", ");
+    }
+    modelo.setValueAt(miembros.toString(), i, 2);
+
+    modelo.setValueAt(u.getId(), i, 3);
+        modelo.setValueAt(u.getEstado(), i, 4);
+
+}
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField apellidoField;
-    private javax.swing.JTextField correoField;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField nombreField;
-    private javax.swing.JTextField passwordField;
-    private javax.swing.JTextField rolField;
     // End of variables declaration//GEN-END:variables
 }

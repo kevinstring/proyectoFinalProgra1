@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+			<equipos>	
+<equipo id="1" nombre="Equipo 1" lider= "geren1@correo.com">
+<miembro>
+<correo>miembro1@correo.com</correo>
+</miembro>
+<miembro>
+<correo>miembro2@correo.com</correo>
+</miembro>
+<miembro>
+<correo>miembro3@correo.com</correo>
+</miembro>
+<miembro>
+<correo>miembro6@correo.com</correo>
+</miembro>
+<miembro>
+<correo>miembro7@correo.com</correo>
+</miembro>
+</equipo>
+<equipo id="2" nombre="Equipo 2" lider= "geren2@correo.com">
+<miembro>
+<correo>miembro4@correo.com</correo>
+</miembro>
+<miembro>
+<correo>miembro5@correo.com</correo>
+</miembro>
+</equipo>
+			</equipos>
+

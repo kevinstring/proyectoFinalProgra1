@@ -19,6 +19,7 @@ public class ListaEquipos extends javax.swing.JFrame {
     public ListaEquipos() {
         initComponents();
         llenarTabla();
+         setLocationRelativeTo(null);
     }
     
     
@@ -31,7 +32,7 @@ public class ListaEquipos extends javax.swing.JFrame {
                 modelo.setValueAt(u.getLider().getUsuario(),i,0);
                                 modelo.setValueAt(u.getNombre(),i,1);
                 modelo.setValueAt(u.getId(),i,2);
-
+        
         }
         
     }

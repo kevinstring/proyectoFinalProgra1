@@ -21,7 +21,7 @@ public class ListaUsuariosAsignados extends javax.swing.JFrame {
         initComponents();
               for(int i = 0; i<Login.equipos.size();i++){
                 Equipo u = Login.equipos.get(i);
-
+                   
                    
                                            comboBox.addItem(u.getNombre());
 
@@ -132,6 +132,7 @@ public class ListaUsuariosAsignados extends javax.swing.JFrame {
             equipo = e;
             break;
         }
+        
     }
     if (equipo == null) {
         return;
@@ -151,7 +152,9 @@ public class ListaUsuariosAsignados extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
             String equipoSeleccionado = comboBox.getSelectedItem().toString();
+            Equipo equis = null;
     for (Equipo equipo : equipos) {
+        System.out.println(equipo.getMiembro());
         if (equipo.getNombre().equals(equipoSeleccionado)) {
             llenarJTable2();
         }

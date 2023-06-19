@@ -154,7 +154,7 @@ DefaultTableModel table = new DefaultTableModel(new String[]{"Nombre", "Apellido
                            i=j;
                            break;
                        }
-                   }
+                   }    
                                          int resultado= JOptionPane.showConfirmDialog(null,"Desea eliminar el registro?","Confirmar Eliminacion",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
                    if(i>=0 && resultado==JOptionPane.YES_OPTION){

@@ -106,6 +106,7 @@ public class AsignarProyecto extends javax.swing.JFrame {
             String equipo;
             Proyecto proyectoSeleccionado = null;
             Equipo equipoSeleccionado = null;
+            
 // TODO add your handling code here:
             proyecto=comboProyecto.getSelectedItem().toString();
             equipo = comboEquipos.getSelectedItem().toString();
@@ -118,6 +119,7 @@ public class AsignarProyecto extends javax.swing.JFrame {
                        break;
                     }
             }
+            
             for(Equipo equi:Login.equipos){
                     if(equi.getNombre().equals(equipo)){
                        equipoSeleccionado=equi;

@@ -5,39 +5,48 @@
 package com.mycompany.login;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author kevin
  */
 public class Equipo {
-      private int id;
+    private int id;
     private String nombre;
     private Usuario lider;
-    private ArrayList<Usuario> miembro;
-    private ArrayList<Proyecto> proyecte =new ArrayList<>();
-
-  
-    
-      
-    public void asignarProyecto(Proyecto p){
+    private List<Usuario> miembros;
+    private ArrayList<Proyecto> proyecte = new ArrayList<>();
+    private List<Equipo> equi;
+    private String estado;
+    public Equipo (){
+                miembros = new ArrayList<>();
+    }
+    public void asignarProyecto(Proyecto p) {
         p.setEquipoAsignado(this);
-        proyecte.add(p);
+        getProyecte().add(p);
+    }   
+   public void agregarMiembro(Usuario miembro) {
+        miembros.add(miembro);
     }
-      public Equipo() {
-        this.miembro = new ArrayList<Usuario>();
+
+      public List<Usuario> obtenerMiembros() {
+        return miembros;
     }
+    public void ide(){
+        this.setId(id++);
+    }
+
     public int getId() {
         return id;
     }
 
-    
-    
-    public void miembroEquipo(){
-        for(Usuario usuario:miembro){
-              usuario.getUsuario();
+    public void miembroEquipo() {
+        for (Usuario usuario : getMiembro()) {
+            usuario.getUsuario();
         }
-            }
+    }
+
     /**
      * @param id the id to set
      */
@@ -76,14 +85,61 @@ public class Equipo {
     /**
      * @return the miembro
      */
-    public ArrayList<Usuario> getMiembro() {
-        return miembro;
+    public List<Usuario> getMiembro() {
+        return miembros;
     }
 
     /**
      * @param miembro the miembro to set
      */
     public void setMiembro(ArrayList<Usuario> miembro) {
-        this.miembro = miembro;
+        this.setMiembro(miembro);
+    }
+
+    /**
+     * @param miembro the miembro to set
+     */
+
+
+    /**
+     * @return the proyecte
+     */
+    public ArrayList<Proyecto> getProyecte() {
+        return proyecte;
+    }
+
+    /**
+     * @param proyecte the proyecte to set
+     */
+    public void setProyecte(ArrayList<Proyecto> proyecte) {
+        this.proyecte = proyecte;
+    }
+
+    /**
+     * @return the equi
+     */
+    public List<Equipo> getEqui() {
+        return equi;
+    }
+
+    /**
+     * @param equi the equi to set
+     */
+    public void setEqui(ArrayList<Equipo> equi) {
+        this.equi = equi;
+    }
+
+    /**
+     * @return the estado
+     */
+    public String getEstado() {
+        return estado;
+    }
+
+    /**
+     * @param estado the estado to set
+     */
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }

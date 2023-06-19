@@ -4,17 +4,21 @@
  */
 package com.mycompany.login;
 
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
 /**
  *
  * @author kevin
  */
-public class Bienvenido extends javax.swing.JFrame {
+public class Bienvenido extends javax.swing.JFrame  {
             private Usuario usuario;
             
     /**
      * Creates new form Bienvenido
+     * @param usuario
      */
-    public Bienvenido(Usuario usuario ) {
+    public Bienvenido(Usuario usuario ){
         
         this.usuario = usuario;
         initComponents();
@@ -30,21 +34,24 @@ public class Bienvenido extends javax.swing.JFrame {
                           modi.setVisible(false);
                                                       ver.setVisible(false);
                                                       eli.setVisible(false);
+                                                      importar.setVisible(false);
+                                                      llenarJTableM();
 
               }
-                                  break;       
+                                    
 
           }
            if(equipo.getLider().getUsuario().equals(this.usuario.getUsuario())){
                             crear.setVisible(true);
                             modi.setVisible(true);
                             ver.setVisible(true);
-                                            equipoUsuario.setText("LIDER DEL EQUIPO: "+equipo.getNombre());
-
+                            verM.setVisible(false);
+                                            equipoUsuario.setText("LIDER: "+equipo.getNombre());
+  llenarJTableL();
               }
            
         }
-                                setLocationRelativeTo(null);
+                                    setLocationRelativeTo(null);
 
     }
 
@@ -57,29 +64,71 @@ public class Bienvenido extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        labelUsuario = new javax.swing.JLabel();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuBar3 = new javax.swing.JMenuBar();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuBar4 = new javax.swing.JMenuBar();
+        jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jButton1 = new javax.swing.JButton();
-        apellidoUsuario = new javax.swing.JLabel();
-        rolUsuario = new javax.swing.JLabel();
-        equipoUsuario = new javax.swing.JLabel();
+        verM = new javax.swing.JButton();
+        importar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        crear = new javax.swing.JButton();
-        modi = new javax.swing.JButton();
-        ver = new javax.swing.JButton();
-        eli = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        jLabel1 = new javax.swing.JLabel();
+        labelUsuario = new javax.swing.JLabel();
+        apellidoUsuario = new javax.swing.JLabel();
+        rolUsuario = new javax.swing.JLabel();
+        equipoUsuario = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jMenuBar5 = new javax.swing.JMenuBar();
+        crear = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        modi = new javax.swing.JMenuItem();
+        ver = new javax.swing.JMenuItem();
+        eli = new javax.swing.JMenuItem();
+        crearTarea = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+
+        jMenu1.setText("jMenu1");
+
+        jMenu2.setText("File");
+        jMenuBar2.add(jMenu2);
+
+        jMenu3.setText("Edit");
+        jMenuBar2.add(jMenu3);
+
+        jMenu4.setText("File");
+        jMenuBar3.add(jMenu4);
+
+        jMenu5.setText("Edit");
+        jMenuBar3.add(jMenu5);
+
+        jMenu6.setText("File");
+        jMenuBar4.add(jMenu6);
+
+        jMenu7.setText("Edit");
+        jMenuBar4.add(jMenu7);
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setFont(new java.awt.Font("Likhan", 0, 15)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 255, 0));
-        jLabel1.setText("BIENVENIDO");
-
-        labelUsuario.setText("jLabel2");
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setBackground(new java.awt.Color(255, 0, 0));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -90,127 +139,222 @@ public class Bienvenido extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 7, 70, -1));
 
-        apellidoUsuario.setText("jLabel2");
+        verM.setBackground(new java.awt.Color(204, 255, 204));
+        verM.setForeground(new java.awt.Color(0, 0, 0));
+        verM.setText("Cambiar estado de Tarea");
+        verM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verMActionPerformed(evt);
+            }
+        });
+        getContentPane().add(verM, new org.netbeans.lib.awtextra.AbsoluteConstraints(543, 6, -1, -1));
 
-        rolUsuario.setText("jLabel2");
+        importar.setBackground(new java.awt.Color(204, 255, 204));
+        importar.setForeground(new java.awt.Color(0, 0, 0));
+        importar.setText("Importar Tareas");
+        importar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                importarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(importar, new org.netbeans.lib.awtextra.AbsoluteConstraints(397, 6, -1, -1));
 
-        equipoUsuario.setText("No asignado");
+        jPanel1.setBackground(new java.awt.Color(153, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setForeground(new java.awt.Color(51, 153, 255));
         jLabel2.setText("ROL");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 90, -1));
 
         jLabel3.setForeground(new java.awt.Color(51, 153, 255));
         jLabel3.setText("NOMBRE");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 90, -1));
 
         jLabel4.setForeground(new java.awt.Color(51, 153, 255));
         jLabel4.setText("APELLIDO");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 90, -1));
 
         jLabel5.setForeground(new java.awt.Color(51, 153, 255));
         jLabel5.setText("EQUIPO");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 90, -1));
 
-        crear.setText("crearProyecto");
-        crear.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("BIENVENIDO");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 130, -1));
+
+        labelUsuario.setBackground(new java.awt.Color(0, 0, 0));
+        labelUsuario.setText("jLabel2");
+        jPanel1.add(labelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 70, -1));
+
+        apellidoUsuario.setBackground(new java.awt.Color(0, 0, 0));
+        apellidoUsuario.setText("jLabel2");
+        jPanel1.add(apellidoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 70, -1));
+
+        rolUsuario.setBackground(new java.awt.Color(0, 0, 0));
+        rolUsuario.setText("jLabel2");
+        jPanel1.add(rolUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 67, -1));
+
+        equipoUsuario.setBackground(new java.awt.Color(0, 0, 0));
+        equipoUsuario.setText("No asignado");
+        jPanel1.add(equipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(646, 36, 192, 546));
+
+        jTable1.setBackground(new java.awt.Color(153, 255, 255));
+        jTable1.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(0, 0, 0));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 620, 360));
+
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        jLabel6.setText("TUS TAREAS");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 36, -1, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("/home/kevin/Escritorio/Proyecto/src/main/java/imagenes/plain-smooth-green-wall-texture.jpg")); // NOI18N
+        jLabel7.setText("jLabel7");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 590));
+
+        crear.setText("Proyecto");
+
+        jMenuItem2.setText("Crear Proyecto");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                crearActionPerformed(evt);
+                jMenuItem2ActionPerformed(evt);
             }
         });
+        crear.add(jMenuItem2);
 
         modi.setText("Modificar Proyecto");
-        modi.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                modiMouseClicked(evt);
+        modi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modiActionPerformed(evt);
             }
         });
+        crear.add(modi);
 
         ver.setText("Ver Proyectos");
-        ver.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                verMouseClicked(evt);
+        ver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verActionPerformed(evt);
             }
         });
-        ver.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                verKeyPressed(evt);
-            }
-        });
+        crear.add(ver);
 
-        eli.setText("EliminarProyecto");
+        eli.setText("Eliminar Proyecto");
         eli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eliActionPerformed(evt);
             }
         });
-        setJMenuBar(jMenuBar1);
+        crear.add(eli);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(174, 174, 174))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(147, 147, 147)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(apellidoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(rolUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(equipoUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(labelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(eli, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(crear, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(modi)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ver)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(crear)
-                    .addComponent(modi)
-                    .addComponent(ver))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(eli)
-                .addGap(4, 4, 4)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelUsuario)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(apellidoUsuario)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rolUsuario)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(equipoUsuario)
-                    .addComponent(jLabel5))
-                .addContainerGap(74, Short.MAX_VALUE))
-        );
+        jMenuBar5.add(crear);
+
+        crearTarea.setText("Tarea");
+
+        jMenuItem6.setText("Crear Tareas");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        crearTarea.add(jMenuItem6);
+
+        jMenuItem7.setText("Ver tareas");
+        crearTarea.add(jMenuItem7);
+
+        jMenuItem8.setText(" Eliminar Tareas");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        crearTarea.add(jMenuItem8);
+
+        jMenuItem3.setText(" Modificar Tarea");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        crearTarea.add(jMenuItem3);
+
+        jMenuBar5.add(crearTarea);
+
+        setJMenuBar(jMenuBar5);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+                   private  void llenarJTableM(){
+        
+DefaultTableModel table = new DefaultTableModel(new String[]{"Us    uario asignado","NombreTarea", "Equipo", "Inicio", "Fin","Proyecto","Estado","estadoTareas","id"}, Login.tareas.size());
 
+        jTable1.setModel(table);
+        TableModel modelo = jTable1.getModel();
+        for(int i = 0; i<Login.tareas.size();i++){
+                       
+                Tareas u = Login.tareas.get(i);
+                 if(u.getMiembro().getUsuario().equals(this.usuario.getUsuario())){
+                     
+          
+                                modelo.setValueAt(u.getMiembro().getUsuario(),i,0);
+                  modelo.setValueAt(u.getNombreTarea(),i,1);
+                         modelo.setValueAt(u.getEquipoAsignado().getNombre(),i,2);   
+                      modelo.setValueAt(u.getFechaInicio(),i,3);
+                modelo.setValueAt(u.getFechaFin(),i,4);
+                                                                       
+   modelo.setValueAt(u.getProyectoAsignado().getNombreProyecto(),i,5);
+      modelo.setValueAt(u.getStatus(),i,6);
+      modelo.setValueAt(u.getEstadoDeTareas(), i, 7);
+            modelo.setValueAt(u.getId(),i,8);
+
+                        }
+                
+
+        }
+        }
+    private  void llenarJTableL(){
+        
+DefaultTableModel table = new DefaultTableModel(new String[]{"Nombre","descripcion","fechaInicio","fechaFin","Equipo", "Usuario","Proyecto","Status","estadoTarea"}, Login.tareas.size());
+
+        jTable1.setModel(table);
+        TableModel modelo = jTable1.getModel();
+        for(int i = 0; i<Login.tareas.size();i++){
+   
+                Tareas u = Login.tareas.get(i);
+            if(u.getProyectoAsignado().getEquipoAsignado().getLider().getUsuario().equals(this.usuario.getUsuario())){     
+                modelo.setValueAt(u.getNombreTarea(),i,0);
+                modelo.setValueAt(u.getDescripcion(),i,1);
+                      modelo.setValueAt(u.getFechaInicio(),i,2);
+                modelo.setValueAt(u.getFechaFin(),i,3);
+                
+                                modelo.setValueAt(u.getEquipoAsignado().getNombre(),i,4);   
+          
+                                modelo.setValueAt(u.getMiembro().getUsuario(),i,5);
+                                                              
+   modelo.setValueAt(u.getProyectoAsignado().getNombreProyecto(),i,6);
+      modelo.setValueAt(u.getStatus(),i,7);
+      modelo.setValueAt(u.getEstadoDeTareas(), i, 8);
+          }
+           
+        }
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
             
         // TODO add your handling code here:
@@ -220,29 +364,52 @@ public class Bienvenido extends javax.swing.JFrame {
             
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearActionPerformed
-            CrearProyectoGerente gerente = new CrearProyectoGerente(usuario);
-            gerente.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_crearActionPerformed
+    private void importarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importarActionPerformed
+            JsonLectura json = new JsonLectura(usuario);
+            json.setVisible(true);
+            // TODO add your handling code here:
+    }//GEN-LAST:event_importarActionPerformed
 
-    private void modiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modiMouseClicked
-                ModificarProyectoGerente modificar = new ModificarProyectoGerente(usuario);
-                modificar.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_modiMouseClicked
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+         CrearProyectoGerente gerente = new CrearProyectoGerente(usuario);
+            gerente.setVisible(true);// TODO add your handling code here:    // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void verKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_verKeyPressed
-                 // TODO add your handling code here:
-    }//GEN-LAST:event_verKeyPressed
+    private void modiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modiActionPerformed
+               ModificarProyectoGerente modificar = new ModificarProyectoGerente(usuario);
+                modificar.setVisible(true);// TODO add your handling code here:        // TODO add your handling code here:
+    }//GEN-LAST:event_modiActionPerformed
 
-    private void verMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verMouseClicked
-               VerProyectoGerente ver = new VerProyectoGerente(usuario);
-                ver.setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_verMouseClicked
+    private void verActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verActionPerformed
+          VerProyectoGerente ver = new VerProyectoGerente(usuario);
+                ver.setVisible(true);        // TODO add your handling code here:        // TODO add your handling code here:
+    }//GEN-LAST:event_verActionPerformed
 
     private void eliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliActionPerformed
-                EliminarProyecto eliminar = new EliminarProyecto(usuario);
-                eliminar.setVisible(true);// TODO add your handling code here:
+              EliminarProyecto eliminar = new EliminarProyecto(usuario);
+                eliminar.setVisible(true);// TODO add your handling code here:        // TODO add your handling code here:
     }//GEN-LAST:event_eliActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+           CrearTarea crear = new CrearTarea(usuario);
+            crear.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void verMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verMActionPerformed
+        VerTareasMiembro verMi = new VerTareasMiembro(usuario);
+        verMi.setVisible(true);// TODO add your handling code here:
+        // TODO add your handling code here:
+    }//GEN-LAST:event_verMActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        EliminarTarea eliminarTarea = new EliminarTarea(usuario);  
+        eliminarTarea.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        ModificarTarea modificarTarea = new ModificarTarea(usuario);
+            modificarTarea.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -251,19 +418,43 @@ public class Bienvenido extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel apellidoUsuario;
-    private javax.swing.JButton crear;
-    private javax.swing.JButton eli;
+    private javax.swing.JMenu crear;
+    private javax.swing.JMenu crearTarea;
+    private javax.swing.JMenuItem eli;
     private javax.swing.JLabel equipoUsuario;
+    private javax.swing.JButton importar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBar3;
+    private javax.swing.JMenuBar jMenuBar4;
+    private javax.swing.JMenuBar jMenuBar5;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel labelUsuario;
-    private javax.swing.JButton modi;
+    private javax.swing.JMenuItem modi;
     private javax.swing.JLabel rolUsuario;
-    private javax.swing.JButton ver;
+    private javax.swing.JMenuItem ver;
+    private javax.swing.JButton verM;
     // End of variables declaration//GEN-END:variables
 }

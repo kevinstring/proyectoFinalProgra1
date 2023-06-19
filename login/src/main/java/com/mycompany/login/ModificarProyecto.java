@@ -24,7 +24,7 @@ public class ModificarProyecto extends javax.swing.JFrame {
     
     public ModificarProyecto() {
         initComponents();
-           
+            setLocationRelativeTo(null);
         for(Proyecto proyectos: Login.proyectos){
             comboProyectos.addItem(proyectos.getNombreProyecto());
            

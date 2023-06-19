@@ -19,7 +19,7 @@ public class CrearProyectoGerente extends javax.swing.JFrame {
                        private Usuario usuario;
                        private Equipo equipo;
     public CrearProyectoGerente(Usuario usuario) {
-        
+
 
         initComponents();
                 this.usuario = usuario;
@@ -33,6 +33,7 @@ public class CrearProyectoGerente extends javax.swing.JFrame {
               }
            
         }
+                     setLocationRelativeTo(null);
     }
 
     /**

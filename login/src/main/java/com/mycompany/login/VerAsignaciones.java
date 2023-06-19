@@ -19,7 +19,7 @@ public class VerAsignaciones extends javax.swing.JFrame {
     public VerAsignaciones() {
         initComponents();
         llenarJTable();
-        
+         setLocationRelativeTo(null);
     }
         
     private  void llenarJTable(){

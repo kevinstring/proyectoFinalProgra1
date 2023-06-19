@@ -12,7 +12,7 @@ import javax.swing.table.TableModel;
  * @author kevin
  */
 public class VerProyectoGerente extends javax.swing.JFrame {
-    private Usuario usuario;
+    private Usuario usuario;    
     /**
      * Creates new form VerProyectoGerente
      */
@@ -20,6 +20,7 @@ public class VerProyectoGerente extends javax.swing.JFrame {
         this.usuario=user;
         initComponents();
         llenarJTable();
+         setLocationRelativeTo(null);
     }
         private  void llenarJTable(){
         
